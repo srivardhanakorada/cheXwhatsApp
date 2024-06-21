@@ -85,7 +85,7 @@ def get_iou_for_bbox(df_original, filename, df_gt):
     
     for index, row in df_original.iterrows():
         # print(row['Name'], row['label'])
-        df_gt_sub = df_gt[(df_gt['file_name'] ==row['Name']) & (df_gt['class']==row['label'])]
+        df_gt_sub = df_gt[(df_gt['Name']==row['Name']) & (df_gt['class']==row['label'])]
         # print(df_gt_sub.shape)
         if df_gt_sub.shape[0] > 0:
             max_iou_score = 0
